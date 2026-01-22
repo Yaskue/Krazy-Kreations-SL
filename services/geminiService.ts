@@ -5,12 +5,8 @@ import { AIResponse } from "../types";
 // We are using process.env.API_KEY as per instructions.
 
 export const generatePartyPlan = async (prompt: string): Promise<AIResponse> => {
-  const apiKey = process.env.API_KEY;
-  if (!apiKey) {
-    throw new Error("API Key not found");
-  }
-
-  const ai = new GoogleGenAI({ apiKey });
+  // Use process.env.API_KEY directly as per guidelines. Assume it is valid.
+  const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
 
   const systemInstruction = `
     You are an expert Party Planner and Gift Curator for "Krazy Kreations".
